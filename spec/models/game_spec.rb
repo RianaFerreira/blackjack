@@ -42,14 +42,111 @@ describe Game do
     end
   end
 
-  context 'pending game' do
+  context 'blackjack' do
+    before(:each) do
+      dealer.stub(stand?: false)
+      player.stub(stand?: false)
+    end
+
+    it 'player should win if hand value equals 21' do
+      player.should_receive(:hand_value).and_return(21)
+      dealer.stub(:hand_value).and_return(17)
+      game.status.should include(
+        status: 'win'
+        )
+    end
+
+    it 'player should lose if dealer hand value equals 21' do
+      player.should_receive(:hand_value).and_return(17)
+      dealer.should_receive(:hand_value).and_return(21)
+      game.status.should include(
+        status: 'lost'
+        )
+    end
+
+    it 'player and dealer are dealt hand value of 21' do
+      dealer.should_receive(:hand_value).and_return(21)
+      player.should_receive(:hand_value).and_return(21)
+      game.status.should include(
+        status: 'draw'
+        )
+    end
+  end
+
+  context 'neither players stand:' do
     before (:each) do
+      dealer.stub(stand?: false, hand_value: 10)
+      player.stub(stand?: false, hand_value: 10)
     end
 
     it 'should have status pending when neither player is over 21' do
-      # dealer.should_receive(:show_hand).and_return(:hand)
+      game.status.should include(
+          status: 'pending'
+        )
     end
 
+    it 'player busts if hand is over 21' do
+      player.should_receive(:hand_value).and_return(22)
+      dealer.should_receive(:hand_value).and_return(17)
+      game.status.should include(
+        status: 'lost'
+        )
+    end
+
+    it 'dealer busts if hand is over 21' do
+      dealer.should_receive(:hand_value).and_return(22)
+      player.should_receive(:hand_value).and_return(17)
+      game.status.should include(
+        status: 'win'
+        )
+    end
+  end
+
+  context 'both players stand:' do
+    before(:each) do
+      dealer.stub(:stand?).and_return(true)
+      player.stub(:stand?).and_return(true)
+    end
+
+    it 'player wins if hand is less than 21 and higher than dealer' do
+      player.should_receive(:hand_value).and_return(20)
+      dealer.should_receive(:hand_value).and_return(16)
+      game.status.should include(
+        status: 'win'
+        )
+    end
+
+    it 'player busts if hand is over 21' do
+      player.should_receive(:hand_value).and_return(22)
+      dealer.stub(:hand_value).and_return(16)
+      game.status.should include(
+        status: 'lost'
+        )
+    end
+
+    it 'player loses if hand is less than dealer' do
+      player.should_receive(:hand_value).and_return(16)
+      dealer.should_receive(:hand_value).and_return(17)
+      game.status.should include(
+        status: 'lost'
+        )
+    end
+
+    it 'player wins if dealer hand is over 21' do
+      player.should_receive(:hand_value).and_return(16)
+      dealer.should_receive(:hand_value).and_return(22)
+      game.status.should include(
+        status: 'win'
+        )
+    end
+
+    it 'player and dealer cards are of equal value' do
+      player.should_receive(:hand_value).and_return(20)
+      dealer.should_receive(:hand_value).and_return(20)
+      game.status.should include(
+        status: 'draw'
+        )
+    end
 
   end
 
