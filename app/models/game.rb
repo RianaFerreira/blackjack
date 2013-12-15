@@ -18,7 +18,6 @@ class Game < ActiveRecord::Base
     player.deal (deck.take 2)
   end
 
-
   def status
     status = 'pending'
     player_hand_value = player.hand_value
@@ -39,7 +38,6 @@ class Game < ActiveRecord::Base
         status = 'lost' if player_hand_value < dealer_hand_value
         status = 'draw' if player_hand_value == dealer_hand_value
     end
-
 
     { status: status }
   end
