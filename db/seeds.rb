@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Deck.destroy_all
+Card.destroy_all
+
+d1 = Deck.create
+c1 = Card.create
