@@ -23,8 +23,21 @@ class Game < ActiveRecord::Base
   end
 
   def deal
+    dealer.reset
+    player.reset
     dealer.deal (deck.take 1)
     player.deal (deck.take 2)
+  end
+
+  def hit
+    deck.take(1).first
+  end
+
+  def stand
+    # play has called stand
+    while (dealer.hand_value < 17) do
+      dealer.hit
+    end
   end
 
   def status

@@ -12,8 +12,8 @@ require 'spec_helper'
 describe Game do
   let!(:deck) {Deck.new}
   let!(:game) { Game.create }
-  let!(:dealer){ game.dealer }
-  let!(:player){ game.player }
+  let!(:dealer) { game.dealer }
+  let!(:player) { game.player }
 
   subject{ game }
 
@@ -39,13 +39,15 @@ describe Game do
     end
 
     it 'should hand the dealer one card from the deck' do
-        player.stub :deal
+        player.stub deal: nil, reset: nil
+        dealer.should_receive(:reset)
         dealer.should_receive(:deal).with([:card])
         game.deal
     end
 
     it 'should hand the player two cards from the deck' do
-        dealer.stub :deal
+        dealer.stub deal: nil, reset: nil
+        player.should_receive(:reset)
         player.should_receive(:deal).with(@cards)
         game.deal
     end
@@ -156,7 +158,35 @@ describe Game do
         status: 'draw'
         )
     end
+  end
 
+  context 'when playing' do
+    before (:each) do
+       game.deck = deck
+    end
+
+    it 'should take a card from the deck when you hit' do
+      deck.should_receive(:take).with(1).and_return([Card.new])
+      game.hit
+    end
+
+    it 'should simulate dealer play when player stand' do
+      dealer.stub(:hand_value).and_return(16,18)
+      dealer.should_receive(:hit).at_least(:once)
+      game.stand
+    end
+
+    it 'dealer should hit on or below 16' do
+      dealer.stub(:hand_value).and_return(16,18)
+      dealer.should_receive(:hit)
+      game.stand
+    end
+
+    it 'dealer should stand on 17 or above' do
+      dealer.stub(:hand_value).and_return(17)
+      dealer.should_not_receive(:hit)
+      game.stand
+    end
   end
 
 end

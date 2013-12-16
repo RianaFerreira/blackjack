@@ -2,19 +2,32 @@
 #
 # Table name: decks
 #
-#  id         :integer          not null, primary key
-#  game_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id      :integer          not null, primary key
+#  game_id :integer
 #
 
 require 'spec_helper'
 
 describe Deck do
-  # test the associations
-  it {should have_many :cards}
+  it { should have_many :cards }
 
-  it 'should respond_to take:integer and return [cards]' do
-    deck.should_receive(1).and_return(heart: 'king')
+  context 'deck #take' do
+    let!(:deck) do
+      deck = Deck.new
+      ['hearts','spades','diamonds','clubs'].each do |suit|
+         ((2..10).to_a + ['A','K','Q','J']).each do |rank|
+            deck.cards << Card.new(suit: suit, rank: rank)
+          end
+      end
+      deck
+    end
+
+    subject { deck }
+
+    it { should have(52).cards }
+    it 'should return cards when take is called' do
+      deck.take(1).length.should == 1
+    end
   end
+
 end

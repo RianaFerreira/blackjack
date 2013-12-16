@@ -13,7 +13,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'foundation-rails'
-  gem "haml-rails"
+  # gem "haml-rails"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -24,13 +24,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 
-  gem 'annotate'
-  gem 'quiet_assets'
+  #gem 'annotate'
+  #gem 'quiet_assets'
 
-  gem 'better_errors'
-  gem 'pry-rails'
-  gem 'pry-debugger'
-  gem 'pry-stack_explorer'
+  #gem 'better_errors'
+  #gem 'pry-rails'
+  #gem 'pry-debugger'
+  #gem 'pry-stack_explorer'
 end
 
 

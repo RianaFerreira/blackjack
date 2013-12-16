@@ -8,5 +8,17 @@
 Deck.destroy_all
 Card.destroy_all
 
-d1 = Deck.create
-c1 = Card.create
+deck = Deck.create
+card_values = {
+  'A' => 11,
+  'K' => 10,
+  'Q' => 10,
+  'J' => 10
+}
+
+['hearts','spades','diamonds','clubs'].each do |suit|
+  ((2..10).to_a + ['A','K','Q','J']).each do |rank|
+    card_value = (card_values.has_key? rank) ? card_values[rank] : rank
+    deck.cards << Card.create(suit: suit, rank: rank, card_value: card_value)
+  end
+end
