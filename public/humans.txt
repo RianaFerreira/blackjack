@@ -1,0 +1,26 @@
+/* TEAM */
+  Producer: Riana Ferreira
+  Contact: hello [at] humanstxt.org
+  Twitter: @riana_ferreira
+  From: Sydney, Australia
+
+/* THANKS */
+
+  General Assembly Instructor: Joel Turnbull
+  Twitter: @edwardawkward
+  From: Sydney, Australia
+
+  General Assembly Onsite Developer: Daniel Tsui
+  Twitter: @epochally
+  From: Sydney, Australia
+
+  EN Translator: Marta Armada
+  Twitter: @martuishere
+  From: Barcelona, Catalonia, Spain
+
+
+/* SITE */
+  Last update: 2013/12/16
+  Language: English
+  Doctype: HTML5
+  IDE: Sublime Text, GIMP
