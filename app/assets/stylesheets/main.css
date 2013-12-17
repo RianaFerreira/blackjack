@@ -1,22 +1,30 @@
-body {
-  background: url(smoke.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-h1 {
+h1, h3 {
   text-align: center;
-  padding: 1em;
-  font-weight: 700;
 }
 
 .cardTable {
-  height: 40em;
-  background-color: #08590c;
-  background-image: -webkit-gradient(linear, 100% 100%, 0% 100%, from(#08590C), to(#08590C), color-stop(.5,#4C9E51));
-  background-image: -moz-linear-gradient(linear, 100% 100%, 0% 100%, from(#08590C), to(#08590C), color-stop(.5,#4C9E51); /* For old Fx (3.6 to 15) */
-  background-image: -ms-linear-gradient(linear, 100% 100%, 0% 100%, from(#08590C), to(#08590C), color-stop(.5,#4C9E51)); /* For pre-releases of IE 10*/
-  background-image: -o-linear-gradient(linear, 100% 100%, 0% 100%, from(#08590C), to(#08590C), color-stop(.5,#4C9E51)); /* For old Opera (11.1 to 12.0) */
-  background-image: inear-gradient(linear, 100% 100%, 0% 100%, from(#08590C), to(#08590C), color-stop(.5,#4C9E51)); /* Standard syntax; must be last */
+  background-color:rgba(11, 133, 22, 0.5);
+  background-image: -webkit-radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
+  background-image: radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
+  height: 450px;
+  width: 95%;
+  border-radius: 10px 10px 450px 450px;
+}
+
+.button {
+  background-color: #076335;
+  border-radius: 10px;
+  margin: .4em auto;
+  display: block;
+  width: 80%;
+}
+
+.stats {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+.action {
+  margin: .1em;
 }
