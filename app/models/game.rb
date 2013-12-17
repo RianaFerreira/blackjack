@@ -61,7 +61,9 @@ class Game < ActiveRecord::Base
         status = 'draw' if player_hand_value == dealer_hand_value
     end
 
-    { status: status }
+    { status: status,
+      dealer: dealer.to_json(include: :cards),
+      player: player.to_json(include: :cards) }
   end
 
   private

@@ -4,7 +4,8 @@
 ## REPOSITORY
 Github https://github.com/RianaFerreira/blackjack
 
-##
+## APPLICATION DEPLOYMENT
+Heroku http://rf-blackjack.herokuapp.com/
 
 ## TECHNOLOGIES
 * Rails 3.2.14
@@ -34,8 +35,9 @@ Github https://github.com/RianaFerreira/blackjack
 * Cards http://designshack.net/articles/css/css-card-tricks/
 
 ## WISH LIST
-1 multi-players
-2 take bets
-3 css betting chips
-4 css cards
+1. multi-players
+2. take bets
+3. css betting chips
+4. css cards
+5. backbone with moustache
 

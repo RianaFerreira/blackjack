@@ -10,7 +10,7 @@
 require 'spec_helper'
 
 describe Game do
-  let!(:deck) {Deck.new}
+  let!(:deck) { Deck.new }
   let!(:game) { Game.create }
   let!(:dealer) { game.dealer }
   let!(:player) { game.player }
@@ -20,16 +20,16 @@ describe Game do
   it { should have_one :deck }
   it { should have_many :players }
   it { should have(2).players }
-  it { should respond_to :dealer}
-  its(:dealer) { should player_with :name, 'Dealer'}
+  it { should respond_to :dealer }
+  its(:dealer) { should player_with :name, 'Dealer' }
   it { should respond_to :player}
-  its(:player) { should player_with :name, 'Player'}
+  its(:player) { should player_with :name, 'Player' }
 
   its(:players) { should include player_with :name, 'Dealer' }
   its(:players) { should include player_with :name, 'Player' }
 
   context 'when dealing' do
-    let!(:card) {double()}
+    let!(:card) { double() }
 
     before (:each) do
        game.deck = deck
@@ -170,6 +170,14 @@ describe Game do
       game.hit
     end
 
+    xit 'should get the game status after hit' do
+      # for dealer and player?
+      # :hit should be called
+      # card should be returned
+      # the :hand_value should be checked
+      # the game :status should be called
+    end
+
     it 'should simulate dealer play when player stand' do
       dealer.stub(:hand_value).and_return(16,18)
       dealer.should_receive(:hit).at_least(:once)
@@ -187,6 +195,7 @@ describe Game do
       dealer.should_not_receive(:hit)
       game.stand
     end
+
   end
 
 end

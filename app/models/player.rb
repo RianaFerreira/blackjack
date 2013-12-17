@@ -16,10 +16,12 @@ class Player < ActiveRecord::Base
   has_and_belongs_to_many :cards
 
   def deal(dealt_cards)
+    # add undetermined number of dealt cards to the cards array
     cards.push(*dealt_cards)
   end
 
   def stand?
+    # player status set
     stand
   end
 
@@ -31,10 +33,12 @@ class Player < ActiveRecord::Base
   end
 
   def reset
+    # remove all cards from the array
     cards.clear
   end
 
   def hit
+    # add the taken card to the array
     cards << game.hit
   end
 end

@@ -24,8 +24,10 @@ describe Player do
 
   it { should have_and_belong_to_many :cards }
   it { should respond_to :deal }
-  it { should respond_to :hand_value }
   it { should respond_to :stand? }
+  it { should respond_to :hand_value }
+  it { should respond_to :reset }
+  it { should respond_to :hit }
 
   it 'should hold cards dealt' do
     player.deal([card])

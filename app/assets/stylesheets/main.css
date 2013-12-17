@@ -7,10 +7,7 @@ h1, h3 {
 .cardTable {
   background-image: url('felt.png');
   background-size: cover;
-/*  background-color:rgba(11, 133, 22, 0.5);
-  background-image: -webkit-radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
-  background-image: radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
-*/  height: 450px;
+  height: 450px;
   width: 95%;
   border-radius: 10px 10px 450px 450px;
 }
