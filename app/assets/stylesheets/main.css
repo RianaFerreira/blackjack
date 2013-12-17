@@ -1,18 +1,60 @@
 h1, h3 {
   text-align: center;
+  font-weight: 500;
 }
 
+/* Card table container for dealer and player cards */
 .cardTable {
-  background-color:rgba(11, 133, 22, 0.5);
+  background-image: url('felt.png');
+  background-size: cover;
+/*  background-color:rgba(11, 133, 22, 0.5);
   background-image: -webkit-radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
   background-image: radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
-  height: 450px;
+*/  height: 450px;
   width: 95%;
   border-radius: 10px 10px 450px 450px;
 }
 
+.cards {
+  top: 6em;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.dealer_card_group,
+.player_card_group {
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+  text-align: center;
+}
+
+.dealer_cards {
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  height: 100px;
+  width: 4em;
+  background-color: white;
+}
+
+.player_cards {
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  height: 100px;
+  width: 4em;
+  top: 180px;
+  background-color: white;
+}
+
+/* Game actions and information */
 .button {
   background-color: #076335;
+  background-image: -webkit-radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
+  background-image: radial-gradient(50% 27%, ellipse farthest-side, rgba(11, 133, 22, 0.5), #076335 91%);
   border-radius: 10px;
   margin: .4em auto;
   display: block;
@@ -20,11 +62,13 @@ h1, h3 {
 }
 
 .stats {
+  margin: 1em;
   border: 1px solid black;
   border-radius: 5px;
   height: 100%;
   width: 100%;
 }
+
 .action {
   margin: .1em;
 }
