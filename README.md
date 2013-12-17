@@ -2,13 +2,12 @@
    General Assembly assignment 4
 
 ## TECHNOLOGIES
-   ============
 * Rails 3.2.14
 * RSpec 2.14.7
 * Postgres 9.3.0
 
 ## GEMS
-   ====
+
 ### TDD
 * RSpec https://github.com/rspec/rspec-rails
 * Shoulda Matchers https://github.com/thoughtbot/shoulda-matchers
