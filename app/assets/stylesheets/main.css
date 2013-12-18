@@ -1,6 +1,13 @@
 h1, h3 {
   text-align: center;
   font-weight: 500;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+
 }
 
 /* Card table container for dealer and player cards */
@@ -10,6 +17,7 @@ h1, h3 {
   height: 450px;
   width: 95%;
   border-radius: 10px 10px 450px 450px;
+  border-bottom: 10px solid #076400;
 }
 
 .cards {
@@ -60,7 +68,7 @@ h1, h3 {
 
 .stats {
   margin: 1em;
-  border: 1px solid black;
+  border: 1px solid #879587;
   border-radius: 5px;
   height: 100%;
   width: 100%;

@@ -34,10 +34,16 @@ Heroku http://rf-blackjack.herokuapp.com/
 * Haml https://github.com/indirect/haml-rails
 * Cards http://designshack.net/articles/css/css-card-tricks/
 
+## Images
+* Background image http://hellogeri.com/blog/view/watercolour_textures_pack
+* Card table texture
+* Playing card images https://code.google.com/p/vectorized-playing-cards/downloads/detail?name=SVG_and_EPS_Vector_Playing_Cards_Version_1.3.zip
+
 ## WISH LIST
-1. multi-players
-2. take bets
-3. css betting chips
-4. css cards
-5. backbone with moustache
+1. game statistics
+2. multi-players
+3. take bets
+4. css betting chips
+5. css cards
+6. backbone with moustache
 

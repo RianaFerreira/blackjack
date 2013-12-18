@@ -3,10 +3,18 @@ Blackjack::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'pages#home'
 
-  get '/games/create' => 'games#create'
-  get '/games/:id/status' => 'games#status', as: 'games_status'
-  get '/games/:id/hit' => 'games#hit'
-  get '/games/:id/deal' => 'games#deal'
+  resources :games do
+    member do
+      get :status
+      get :hit
+      get :deal
+    end
+  end
+  #replaces the following manual route definitions
+  #get '/games/create' => 'games#create'
+  # get '/games/:id/status' => 'games#status', as: 'status_game'
+  # get '/games/:id/hit' => 'games#hit', as: 'hit_game'
+  # get '/games/:id/deal' => 'games#deal', as: 'deal_game'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

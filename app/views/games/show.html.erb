@@ -1,0 +1,47 @@
+<div class="row header">
+  <div class="large-11 columns">
+    <h1>Blackjack</h1>
+  </div>
+  <div class="large-1 columns">
+    <%= link_to 'Home', :back %>
+  </div>
+</div>
+
+<!-- card table and cards -->
+<div class="row cardTable">
+  <div class="large-12 columns">
+  </div>
+</div>
+
+<div class="cards">
+  <div class="dealer_card_group">
+    <!-- dealer cards -->
+    <div class="dealer_cards"></div>
+    <div class="dealer_cards"></div>
+    <div class="dealer_cards"></div>
+
+  </div>
+
+  <div class="player_card_group">
+    <!-- player cards -->
+    <div class="player_cards"></div>
+    <div class="player_cards"></div>
+    <div class="player_cards"></div>
+    <div class="player_cards"></div>
+  </div>
+</div>
+
+<!-- Game related actions and info -->
+<div class="row">
+  <div class="columns large-4">
+    <div class="stats">
+      <h3>Game Stats</h3>
+    </div>
+  </div>
+  <div class="columns large-4"></div>
+  <div class="columns large-4">
+    <%= link_to 'Deal', deal_game_path(@game), :remote => true, class: 'button' %>
+    <%= link_to 'Hit', hit_game_path(@game), class: 'button' %>
+    <%= link_to 'Stand', deal_game_path(@game), class: 'button' %>
+  </div>
+</div>

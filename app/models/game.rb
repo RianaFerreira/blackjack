@@ -61,9 +61,14 @@ class Game < ActiveRecord::Base
         status = 'draw' if player_hand_value == dealer_hand_value
     end
 
+    # json data to be returned
     { status: status,
       dealer: dealer.to_json(include: :cards),
       player: player.to_json(include: :cards) }
+
+     # {'status', 'pending',
+     #  'dealer', {card1, suite, rank, image},
+     #  'player', ''}
   end
 
   private
