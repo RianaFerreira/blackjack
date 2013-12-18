@@ -28,6 +28,7 @@ Heroku http://rf-blackjack.herokuapp.com/
 ### CODE DOCUMENTATION
 * Annotate https://github.com/ctran/annotate_models
 * Quiet Assets https://github.com/evrone/quiet_assets
+* Sextant https://github.com/schneems/sextant
 
 ### STYLE
 * Foundation 5 http://foundation.zurb.com/docs/applications.html
