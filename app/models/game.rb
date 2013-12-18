@@ -27,6 +27,8 @@ class Game < ActiveRecord::Base
     player.reset
     dealer.deal (deck.take 1)
     player.deal (deck.take 2)
+    dealer.save
+    player.save
   end
 
   def hit
@@ -34,14 +36,19 @@ class Game < ActiveRecord::Base
   end
 
   def stand
-    # play has called stand
+    puts "=========standing"
+    player.stand = true
+    # player has called stand
     while (dealer.hand_value < 17) do
       dealer.hit
     end
+    dealer.stand = true
   end
 
   def status
     status = 'pending'
+    puts "========#{dealer.stand} #{player.stand} #{dealer.stand?} #{player.stand?}"
+
     player_hand_value = player.hand_value
     dealer_hand_value = dealer.hand_value
 
@@ -63,12 +70,8 @@ class Game < ActiveRecord::Base
 
     # json data to be returned
     { status: status,
-      dealer: dealer.to_json(include: :cards),
-      player: player.to_json(include: :cards) }
-
-     # {'status', 'pending',
-     #  'dealer', {card1, suite, rank, image},
-     #  'player', ''}
+      dealer: dealer,
+      player: player }
   end
 
   private

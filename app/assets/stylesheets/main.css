@@ -20,7 +20,7 @@ a {
 }
 
 .cards {
-  top: 6em;
+  top: 4em;
   left: 0;
   width: 100%;
   position: absolute;
@@ -34,25 +34,36 @@ a {
   width: auto;
   text-align: center;
 }
-
-.dealer_cards {
-  border: 1px solid black;
+#dealer li,#player, li {
+  display: inline;
+  list-style: none;
+}
+#dealer .cards {
   display: inline-block;
   position: relative;
-  height: 100px;
-  width: 4em;
-  background-color: white;
+  width: 10em;
+  top: 10px;
 }
 
-.player_cards {
-  border: 1px solid black;
+#status {
+  text-align: center;
+  font-size: 3em;
+  color: white;
+}
+
+#player .cards {
   display: inline-block;
   position: relative;
-  height: 100px;
-  width: 4em;
-  top: 180px;
-  background-color: white;
+  width: 10em;
+  top: 0;
 }
+
+.test {
+  height: 10em;
+  background-image: url('Clubs/10C.svg');
+  background-size: cover;
+}
+
 
 /* Game actions and information */
 .button {

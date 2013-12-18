@@ -8,6 +8,7 @@ Blackjack::Application.routes.draw do
       get :status
       get :hit
       get :deal
+      get :stand
     end
   end
   #replaces the following manual route definitions

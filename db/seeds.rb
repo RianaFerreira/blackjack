@@ -16,7 +16,7 @@ card_values = {
   'J' => 10
 }
 
-['hearts','spades','diamonds','clubs'].each do |suit|
+['Hearts','Spades','Diamonds','Clubs'].each do |suit|
   ((2..10).to_a + ['A','K','Q','J']).each do |rank|
     card_value = (card_values.has_key? rank) ? card_values[rank] : rank
     deck.cards << Card.create(suit: suit, rank: rank, card_value: card_value)

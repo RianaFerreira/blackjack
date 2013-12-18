@@ -22,7 +22,7 @@ class Player < ActiveRecord::Base
 
   def stand?
     # player status set
-    stand
+    self.stand
   end
 
   def hand_value
@@ -34,10 +34,12 @@ class Player < ActiveRecord::Base
 
   def reset
     # remove all cards from the array
+    self.stand = false
     cards.clear
   end
 
   def hit
+    puts "============hitting"
     # add the taken card to the array
     cards << game.hit
   end
