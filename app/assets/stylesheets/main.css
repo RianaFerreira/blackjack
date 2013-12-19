@@ -34,7 +34,6 @@ a {
   position: relative;
   width: auto;
   text-align: center;
-
   font-size: 3em;
   color: white;
 }
@@ -47,7 +46,7 @@ a {
   position: relative;
   width: 60px;
   height: 84px;
-  border: 1px solid lime;
+  box-shadow: 0 8px 6px -6px black;
   background-position: center;
   background-size: 280px 280px;
   display: inline-block;
@@ -58,7 +57,7 @@ a {
   position: relative;
   width: 60px;
   height: 84px;
-  border: 1px solid lime;
+  box-shadow: 0 8px 6px -6px black;
   background-position: center;
   background-size: 280px 280px;
   display: inline-block;
