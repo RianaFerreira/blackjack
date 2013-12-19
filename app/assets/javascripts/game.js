@@ -47,11 +47,15 @@
 
 
     $('.button.deal, .button.hit, .button.stand').click(function(e){
+      e.preventDefault();
+      if ($(this).hasClass('disabled')) {
+        return; // Button is disabled so do nothing.
+      }
       var url = $(this).attr('href');
       $.getJSON(url, function(json){
         displayStatus(json);
       });
-      e.preventDefault();
+
       return false;
     });
 
