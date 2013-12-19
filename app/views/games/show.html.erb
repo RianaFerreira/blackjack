@@ -10,21 +10,20 @@
 
   <!-- card table and cards -->
   <div class="row cardTable">
-    <div class="large-12 columns">
-    </div>
-  </div>
+    <div class="large-12 columns"></div>
+  <!--/div-->
 
-  <div class="cards">
+  <!--div class="cards"-->
     <div class="dealer_card_group">
       <!-- dealer cards -->
-      <ul id="dealer"></ul>
+      <div id="dealer"></div>
     </div>
 
     <div id="status"></div>
 
     <div class="player_card_group">
       <!-- player cards -->
-      <ul id="player" ></ul>
+      <div id="player"></div>
     </div>
   </div>
 
@@ -35,7 +34,9 @@
         <h3>Game Stats</h3>
       </div>
     </div>
+
     <div class="columns large-4"></div>
+
     <div class="columns large-4">
       <%= link_to 'Deal', deal_game_path(@game), class: 'button deal' %>
       <%#= link_to 'Deal', deal_game_path(@game), :remote => true, class: 'button' %>
@@ -43,8 +44,6 @@
       <%= link_to 'Stand', stand_game_path(@game), class: 'button stand' %>
     </div>
   </div>
-
-<div class="test"></div>
 
 </div>
 

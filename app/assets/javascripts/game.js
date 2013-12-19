@@ -1,17 +1,21 @@
 (function($){
-
+  // jQuery Plugin
   $.fn.blackjack = function(){
 
     function displayStatus(json){
 
       function displayCards(cards, playerSelector){
+        // clear the card list items for the player and dealer
         var playerElement = $(playerSelector);
         playerElement.children().remove();
+
+        // each list item has an image element with the class cards
         $(cards).each(function(index, card){
-          //playerElement.append($('<li/>').html(card.suit+card.rank));
-           var imgUrl = '/assets/'+card.suit+'/'+
-             card.rank+card.suit.charAt(0)+'.svg';
-          playerElement.append($('<li/>').append($('<img/>').addClass('cards').attr('src',imgUrl)));
+          // playerElement.append($('<li/>').html(card.suit+card.rank));
+           var imgUrl = 'url(/assets/'+card.suit+'/'+
+             card.rank+card.suit.charAt(0)+'.svg)';
+          // playerElement.append($('<li/>').append($('<img/>').addClass('cards').attr('src',imgUrl)));
+          playerElement.append($('<div/>').addClass('cards').css('background-image',imgUrl));
         });
       };
 
@@ -27,7 +31,6 @@
         }
 
       };
-
 
       displayCards(json.dealer.cards,'#dealer');
       displayCards(json.player.cards, '#player');

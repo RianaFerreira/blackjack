@@ -2,6 +2,7 @@ h1, h3 {
   text-align: center;
   font-weight: 500;
   color: white;
+
 }
 
 a {
@@ -20,7 +21,6 @@ a {
 }
 
 .cards {
-  top: 4em;
   left: 0;
   width: 100%;
   position: absolute;
@@ -28,40 +28,48 @@ a {
 }
 
 .dealer_card_group,
-.player_card_group {
+.player_card_group,
+#status {
   margin: 0 auto;
   position: relative;
   width: auto;
   text-align: center;
-}
-#dealer li,#player, li {
-  display: inline;
-  list-style: none;
-}
-#dealer .cards {
-  display: inline-block;
-  position: relative;
-  width: 10em;
-  top: 10px;
-}
 
-#status {
-  text-align: center;
   font-size: 3em;
   color: white;
 }
 
-#player .cards {
-  display: inline-block;
+#status {
+  line-height: 3em;
+}
+
+#dealer .cards {
   position: relative;
-  width: 10em;
-  top: 0;
+  width: 60px;
+  height: 84px;
+  border: 1px solid lime;
+  background-position: center;
+  background-size: 280px 280px;
+  display: inline-block;
+  margin: .5em;
+}
+
+#player .cards {
+  position: relative;
+  width: 60px;
+  height: 84px;
+  border: 1px solid lime;
+  background-position: center;
+  background-size: 280px 280px;
+  display: inline-block;
+  margin: .5em;
 }
 
 .test {
   height: 10em;
   background-image: url('Clubs/10C.svg');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 
