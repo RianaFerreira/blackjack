@@ -45,6 +45,5 @@ Heroku http://rf-blackjack.herokuapp.com/
 2. multi-players
 3. take bets
 4. css betting chips
-5. css cards
-6. backbone with moustache
+5. backbone with moustache
 
