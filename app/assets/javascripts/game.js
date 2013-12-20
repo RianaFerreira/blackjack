@@ -32,9 +32,17 @@
 
       };
 
+      function updateStats(json){
+        $('#win_stats').html(json.player.win);
+        $('#lost_stats').html(json.player.lost);
+        $('#draw_stats').html(json.player.draw);
+      };
+
+
       displayCards(json.dealer.cards,'#dealer');
       displayCards(json.player.cards, '#player');
       toggleButtons(json);
+      updateStats(json);
 
     };
 

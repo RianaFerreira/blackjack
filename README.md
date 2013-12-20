@@ -41,9 +41,8 @@ Heroku http://rf-blackjack.herokuapp.com/
 * Playing card images https://code.google.com/p/vectorized-playing-cards/downloads/detail?name=SVG_and_EPS_Vector_Playing_Cards_Version_1.3.zip
 
 ## WISH LIST
-1. game statistics
-2. multi-players
-3. take bets
-4. css betting chips
-5. backbone with moustache
+1. multi-players
+2. take bets
+3. css betting chips
+4. backbone with moustache
 
