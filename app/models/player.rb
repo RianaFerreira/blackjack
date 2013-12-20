@@ -5,13 +5,16 @@
 #  id         :integer          not null, primary key
 #  name       :string(255)
 #  stand      :boolean
+#  win        :integer
+#  lost       :integer
+#  draw       :integer
 #  game_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 class Player < ActiveRecord::Base
-  attr_accessible :name, :stand
+  attr_accessible :name, :stand, :win, :lost, :draw
   belongs_to :game
   has_and_belongs_to_many :cards
 
@@ -39,7 +42,6 @@ class Player < ActiveRecord::Base
   end
 
   def hit
-    puts "============hitting"
     # add the taken card to the array
     cards << game.hit
   end

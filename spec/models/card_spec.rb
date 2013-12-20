@@ -2,10 +2,11 @@
 #
 # Table name: cards
 #
-#  id      :integer          not null, primary key
-#  suit    :string(255)
-#  rank    :string(255)
-#  deck_id :integer
+#  id         :integer          not null, primary key
+#  suit       :string(255)
+#  rank       :string(255)
+#  card_value :integer
+#  deck_id    :integer
 #
 
 require 'spec_helper'

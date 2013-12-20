@@ -36,7 +36,6 @@ class Game < ActiveRecord::Base
   end
 
   def stand
-    puts "=========standing"
     player.stand = true
     # player has called stand
     while (dealer.hand_value < 17) do
@@ -47,7 +46,6 @@ class Game < ActiveRecord::Base
 
   def status
     status = 'pending'
-    puts "========#{dealer.stand} #{player.stand} #{dealer.stand?} #{player.stand?}"
 
     player_hand_value = player.hand_value
     dealer_hand_value = dealer.hand_value
@@ -68,6 +66,17 @@ class Game < ActiveRecord::Base
         status = 'draw' if player_hand_value == dealer_hand_value
     end
 
+    if status == 'win'
+      player.win += 1
+      player.save
+    elsif status == 'lost'
+      player.lost += 1
+      player.save
+    elsif status == 'draw'
+      player.draw += 1
+      player.save
+    end
+
     # json data to be returned
     { status: status,
       dealer: dealer,
@@ -76,8 +85,8 @@ class Game < ActiveRecord::Base
 
   private
   def setup_players
-    players << Player.create(name: 'Dealer')
-    players << Player.create(name: 'Player')
+    players << Player.create(name: 'Dealer', win: 0, lost: 0, draw: 0)
+    players << Player.create(name: 'Player', win: 0, lost: 0, draw: 0)
   end
 
 end

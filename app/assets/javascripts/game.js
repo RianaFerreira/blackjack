@@ -38,13 +38,10 @@
 
     };
 
-
     var statusURL = $(this).data('status');
-
     $.getJSON(statusURL, function(json){
       displayStatus(json);
     });
-
 
     $('.button.deal, .button.hit, .button.stand').click(function(e){
       e.preventDefault();

@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(:version => 20131215045941) do
   create_table "players", :force => true do |t|
     t.string   "name"
     t.boolean  "stand"
+    t.integer  "win"
+    t.integer  "lost"
+    t.integer  "draw"
     t.integer  "game_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
