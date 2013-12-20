@@ -1,8 +1,7 @@
-h1, h3 {
+h1, h3, h5 {
   text-align: center;
   font-weight: 500;
   color: white;
-
 }
 
 a {
@@ -89,6 +88,8 @@ a {
   border-radius: 5px;
   height: 100%;
   width: 100%;
+  color: white;
+  text-align: center;
 }
 
 .action {
