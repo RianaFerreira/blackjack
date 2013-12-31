@@ -92,6 +92,12 @@ a {
   text-align: center;
 }
 
+#win_stats,
+#lost_stats,
+#draw_stats {
+  margin-bottom: 1em;
+}
+
 .action {
   margin: .1em;
 }
