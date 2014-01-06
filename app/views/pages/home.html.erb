@@ -1,5 +1,25 @@
-<h1>welcome</h1>
+<h1>Blackjack</h1>
 
 <%= form_for @game do |f| %>
-  <%= f.submit 'Blackjack', class: 'button' %>
+  <%= f.submit 'Play Game', class: 'button' %>
 <% end %>
+
+    <article class="row rules">
+      <section class="small-6 columns overview">
+        <p>Play a game of Blackjack and compete against the dealer, the hand closest to 21 wins.</p>
+        <p>Click "Hit" to be dealt another card from the deck.</p>
+        <p>Click "Stand" if you don't need anymore cards and give the dealer a turn to play.</p>
+        <p>Click "Deal" to start a new game.</p>
+        <p>Track your progress by viewing your game statistics.</p>
+      </section>
+
+      <section class="small-6 columns logic">
+          <p>Ace card counts as 11 points.</p>
+          <p>10, Jack, Queen and King cards count at 10 points.</p>
+          <p>You can be dealt two cards that tally 21 and win immediately.</p>
+          <p>The cards you hit tally 21 you win.</p>
+          <p>Your hand tallys less than 21 and you stand it is the dealer's turn to play.</p>
+          <p>The dealer's cards tally 21 or more than your hand, you lose.</p>
+          <p>If your hand and the dealer's tally equally, the game is a draw and neither player wins.</p>
+      </section>
+    </article>

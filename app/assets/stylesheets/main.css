@@ -9,7 +9,37 @@ a {
   color: white;
 }
 
+/* landing page */
+.rules {
+  color: white;
+  padding: 1em;
+}
+
+.overview,
+.logic {
+  text-align: justify;
+  padding: 1em;
+  min-width: 23em;
+}
+
+.overview p,
+.logic p {
+  margin: 1em;
+
+}
+
 /* Card table container for dealer and player cards */
+.exit {
+  line-height: 3em;
+  font-size: 1.5em;
+  text-align: right;
+}
+
+.exit a:hover {
+  color: white;
+  text-shadow: rgb(216, 74, 53) 0 -4px;
+}
+
 .cardTable {
   background-image: url('felt.png');
   background-size: cover;
